@@ -18,13 +18,11 @@ const student = new mongoose.Schema({
 const Student = new mongoose.model("Student", student);
 
 const adder = async (user) => {
-  const ss = new Student({
+  const ss = await Student.create({
     name: "Khattaka",
     workout: false,
     age: 5,
   });
-
-  await ss.save();
 };
 
 adder();
